@@ -4,7 +4,7 @@ GOBBO.UI = GOBBO.UI or {}
 local function loadDirectory(dir)
     local fil, fol = file.Find(dir .. "/*", "LUA")
 
-    for k,v in ipairs(fil) do
+    for k, v in ipairs(fil) do
         local dirs = dir .. "/" .. v
 
         if v:StartWith("cl_") then
@@ -30,9 +30,8 @@ local function loadAddon()
 end
 
 if SERVER then
-    resource.AddFile("resource/fonts/nauman-extrabold.ttf")
-    resource.AddFile("resource/fonts/nauman-regular.ttf")
-    resource.AddFile("resource/fonts/nauman-semibold.ttf")
+    resource.AddFile("resource/fonts/SonnyVol2-ExtraBold.ttf")
+    resource.AddFile("resource/fonts/SonnyVol2-Regular.ttf")
 end
 
 loadAddon()

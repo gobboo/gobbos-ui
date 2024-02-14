@@ -5,15 +5,15 @@
 local entities = {
 	["base_searchable"] = "Search",
 	["entity_lightarmour"] = "To Equip",
-	["entity_heavyarmour"] = "To Equip"
+	["entity_heavyarmour"] = "To Equip",
+	["sent_ball"] = "Eat"
 }
 
-hook.Add("HUDDraw", "GobboDrawDefaults", function()
+hook.Add("HUDPaint", "GobboDrawDefaults", function()
 	local ply = LocalPlayer()
 	local trace = ply:GetEyeTrace()
 
 	local entity = trace.Entity
-
 	if (!IsValid(entity)) then
 		return
 	end
@@ -25,7 +25,7 @@ hook.Add("HUDDraw", "GobboDrawDefaults", function()
 	end
 
 	for k, v in pairs(entities) do
-		if (entity:GetClass() ~= k) then
+		if (entity:GetClass() ~= k and entity.Base ~= k) then
 			continue
 		end
 
